@@ -30,10 +30,21 @@ console.log('örnek görev:', ilkiniDon(['as','sa'],function(metin){return metin
   Aşağıdaki skor1 ve skor2 kodlarını inceleyiniz ve aşağıdaki soruları altına not alarak cevaplayın
   
   1. skor1 ve skor2 arasındaki fark nedir?
+  Cevap1 : skor1'de tüm değişkenler skorArtirici fonksiyonunun içindedir.(local scope) skor, skorArtirici fonskiyonu çalıştığı 
+  sürece artmaya devam eder ve skor'u fonksiyonun dışında kullanamayız. skor2'de skor, global scope'da 
+  tanımlandığı için fonksiyonun dışında da kullanabiliriz. Yani kodun ilerleyen aşamalarında başka bir değer 
+  verebiliriz veya başka bir fonskyionda kullanabiliriz. 
   
   2. Hangisi bir closure kullanmaktadır? Nasıl tarif edebilirsin? (yarınki derste öğreneceksin :) )
+ Cevap2 : skor1 kodunda clousure kullanılmıştır. function skorArtirici() fonksiyonu (parent) olarak skorGuncelle
+ fonskiyonu'nu (child) kapsamaktadır.  
   
   3. Hangi durumda skor1 tercih edilebilir? Hangi durumda skor2 daha mantıklıdır?
+Cevap3 : Skor1 örneği için; bir bilgisayar oyunu oynandığını hayal edelim. Bu oyunu fonksiyon çağrıldığı sürece oynama imkanımız olur.
+Yani oyunu kapatıp yeniden açınca oyuna sıfırdan başlarız. Çünkü fonksiyon çalışıp bitince içindeki değerler de kaybolur.
+Skor2 örneği için de; bu bilgisayar oyununu kapatıp tekrar açınca skor2 global scope'da tanımlandığı için tekrardan erişilebilir durumda olacak.
+Ve böylece skor2'nin kaldığı değerinden fonksiyon devam eder. 
+
 */
 
 // skor1 kodları
@@ -64,10 +75,19 @@ Aşağıdaki takimSkoru() fonksiyonununda aşağıdakileri yapınız:
 Not: Bu fonskiyon, aşağıdaki diğer görevler için de bir callback fonksiyonu olarak da kullanılacak
 */
 
-function takimSkoru(/*Kodunuzu buraya yazınız*/){
+function takimSkoru(){
     /*Kodunuzu buraya yazınız*/
-}
+    let ceyrekSkorDegeri = 0;
+    ceyrekSkorDegeri =Math.floor(Math.random()*25);
+    if(10 < ceyrekSkorDegeri  && 25 > ceyrekSkorDegeri){
+      return ceyrekSkorDegeri;
+    } else {
+    ceyrekSkorDegeri = 10 + ceyrekSkorDegeri;
+    return ceyrekSkorDegeri;
+    }
 
+}
+console.log(takimSkoru());
 
 
 
