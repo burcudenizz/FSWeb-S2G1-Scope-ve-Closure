@@ -143,10 +143,16 @@ Aşağıdaki periyotSkoru() fonksiyonununda aşağıdakileri yapınız:
   */
 
 
-function periyotSkoru(/*Kodunuzu buraya yazınız*/) {
+function periyotSkoru(callbackiki) {
   /*Kodunuzu buraya yazınız*/
-
-}
+  let evSahibiSkoru = callbackiki();
+  let konukTakimSkoru = callbackiki();
+  let newObj ={
+    "EvSahibi": evSahibiSkoru,
+    "KonukTakim": konukTakimSkoru
+   }
+   return newObj;
+} console.log(periyotSkoru(takimSkoru));
 
 
 /* Zorlayıcı Görev 5: skorTabelasi() 
