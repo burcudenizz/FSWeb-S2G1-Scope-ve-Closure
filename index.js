@@ -185,10 +185,25 @@ MAÇ UZAR ise skorTabelasi(periyotSkoru,takimSkoru,4)
 ]
 ] */
 // NOTE: Bununla ilgili bir test yoktur. Eğer logladığınız sonuçlar yukarıdakine benziyor ise tmamlandı sayabilirsiniz.
+let newArray = [];
+function skorTabelasi(forthfunc, secondfunc, periodnumber) {
+  /*Kodunuzu buraya yazınız*/ 
+  // let evSahibiSonucSkoru = secondfunc();
+  // let konukTakimSonucSkoru =  secondfunc();
+  let evSahibiPeriodSkoru = 0;
+  let konukTakimPeriodSkoru = 0;
+  
 
-function skorTabelasi(/*Kodunuzu buraya yazınız*/) {
-  /*Kodunuzu buraya yazınız*/
-}
+  for(let i = 1; i <= periodnumber; i++) {
+   evSahibiPeriodSkoru = forthfunc().EvSahibi;
+   konukTakimPeriodSkoru = forthfunc().KonukTakim;
+   let skorlar =  i +"Periyot: Ev Sahibi" + evSahibiPeriodSkoru + "- Konuk Takım" + konukTakimPeriodSkoru;
+  } 
+
+newArray.push(skorlar);
+return newArray;
+} 
+console.log(newArray);
 
 
 
