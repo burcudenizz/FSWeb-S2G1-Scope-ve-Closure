@@ -106,9 +106,23 @@ Aşağıdaki macSonucu() fonksiyonununda aşağıdakileri yapınız:
 }
 */ 
 
-function macSonucu(/*Kodunuzu buraya yazınız*/){
+function macSonucu(callback,basketCeyrekSayisi){
   /*Kodunuzu buraya yazınız*/
+
+  let evSahibiSkoru = 0;
+  let konukTakimSkoru = 0;
+ 
+ for(let i=0; i<basketCeyrekSayisi ; i++){ 
+  evSahibiSkoru = evSahibiSkoru + callback();
+  konukTakimSkoru = konukTakimSkoru + callback();
+ } 
+ let newObj ={
+  "EvSahibi": evSahibiSkoru,
+  "KonukTakim": konukTakimSkoru
+ }
+ return newObj;
 }
+console.log(macSonucu(takimSkoru,4));
 
 
 
